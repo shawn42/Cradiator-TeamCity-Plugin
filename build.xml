@@ -48,7 +48,7 @@
 			   target="1.5">
 
 			<src path="src"/>
-			<src path="tests"/>
+			<!--<src path="tests"/>-->
 		</javac>
 	</target>
 
@@ -76,7 +76,7 @@
 	</target>
 
 	<target name="build.identifier">
-		<echo file="build/classes/version.properties" message="piazza.version=${version}"/>
+		<echo file="build/classes/version.properties" message="cradiator.version=${version}"/>
 	</target>
 
 	<target name="jar.tests" depends="compile, dir.dist">
@@ -90,7 +90,7 @@
 	<target name="run.tests" depends="jars">
 		<property name="outdir" value="build/reports/tests"/>
 		<mkdir dir="${outdir}"/>
-		<junit fork="yes" forkmode="once" printsummary="no" showoutput="yes">
+		<!--<junit fork="yes" forkmode="once" printsummary="no" showoutput="yes">
 			<classpath>
 				<path refid="build.classpath"/>
 				<fileset dir="${distdir}" includes="*.jar"/>
@@ -105,7 +105,7 @@
 					<exclude name="**/Abstract*"/>
 				</fileset>
 			</batchtest>
-		</junit>
+		</junit>-->
 	</target>
 
     <target name="deploy" depends="clean, run.tests"
