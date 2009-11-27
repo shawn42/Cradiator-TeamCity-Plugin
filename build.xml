@@ -1,11 +1,11 @@
-<project name="Piazza" default="build">
-	<property name="app" value="piazza"/>
+<project name="Cradiator" default="build">
+	<property name="app" value="cradiator"/>
 	<tstamp>
 		<format property="version" timezone="UTC" pattern="yyyyMMdd"/>
 	</tstamp>
 
-	<property name="distdir" value="build/${app}-${version}"/>
-	<property name="teamcity.home" location="c:/TeamCity"/>
+	<property name="distdir" value="build/${app}-dist"/>
+	<property name="teamcity.home" location="c:/Code/TeamCity"/>
 	<property name="teamcity.appdir" location="${teamcity.home}/webapps/ROOT/WEB-INF"/>
     <property name="teamcity.runAll" location="${teamcity.home}/bin/runAll.bat"/>
 

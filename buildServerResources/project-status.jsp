@@ -1,6 +1,5 @@
 <%@ include file="/include.jsp" %>
 <%@ page language="java" session="true" errorPage="/runtimeError.jsp" %>
-<%--<jsp:useBean id="build" type="com.natpryce.cradiatortor.BuildTypeMonitorViewState" scope="request"/>--%>
 <jsp:useBean id="project" type="com.cradiator.TeamCityStatusPlugin.ProjectMonitorViewState" scope="request"/>
 <Projects CCType="TeamCity">
     <c:forEach var="build" items="${project.builds}">

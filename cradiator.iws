@@ -19,8 +19,10 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/BuildMonitorController.java" line="54" class="com.cradiator.TeamCityStatusPlugin.BuildMonitorController" package="com.cradiator.TeamCityStatusPlugin">
+    <method_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/Cradiator.java" line="39" class="com.cradiator.TeamCityStatusPlugin.Cradiator" package="com.cradiator.TeamCityStatusPlugin">
+        <option name="WATCH_ENTRY" value="true" />
+        <option name="WATCH_EXIT" value="true" />
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -33,7 +35,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-    </line_breakpoints>
+    </method_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -75,46 +77,19 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BuildMonitorController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/BuildMonitorController.java">
+      <file leaf-file-name="INSTALL" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/INSTALL">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="1762" selection-end="1762" vertical-scroll-proportion="0.0">
+            <state line="15" column="65" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../TeamCity/devPackage/src/openApi-source.jar!/jetbrains/buildServer/controllers/BaseController.java">
+      <file leaf-file-name="COPYING" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/COPYING">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="0" selection-start="2295" selection-end="2295" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractController.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../TeamCity/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar!/org/springframework/web/servlet/mvc/AbstractController.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="68" selection-start="910" selection-end="910" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleControllerHandlerAdapter.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../TeamCity/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar!/org/springframework/web/servlet/mvc/SimpleControllerHandlerAdapter.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="56" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DispatcherServlet.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../TeamCity/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar!/org/springframework/web/servlet/DispatcherServlet.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="19" selection-start="6505" selection-end="6505" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -122,48 +97,72 @@
       </file>
       <file leaf-file-name="build-server-plugin.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/META-INF/build-server-plugin.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="51" selection-start="143" selection-end="143" vertical-scroll-proportion="-2.2105262">
-              <folding />
-            </state>
-          </provider>
           <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
             <state />
           </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="0" selection-start="270" selection-end="270" vertical-scroll-proportion="-6.631579">
+              <folding />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="project-status.jsp" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Cradiator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/Cradiator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="13" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project-status.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/buildServerResources/project-status.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="13" selection-start="543" selection-end="543" vertical-scroll-proportion="-7.56">
+            <state line="22" column="0" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.45742574">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cradiator.ipr" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cradiator.ipr">
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="186" selection-start="2563" selection-end="2563" vertical-scroll-proportion="-4.2">
+            <state line="6" column="36" selection-start="205" selection-end="205" vertical-scroll-proportion="-2.52">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cradiator.iml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Cradiator.iml">
+      <file leaf-file-name="BuildMonitorController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/BuildMonitorController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="73" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0">
+            <state line="60" column="75" selection-start="2461" selection-end="2461" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuildTypeMonitorViewState.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/BuildTypeMonitorViewState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="13" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="team-piazza.iws" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/team-piazza.iws">
+      <file leaf-file-name="ProjectMonitorViewState.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/ProjectMonitorViewState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="45" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.431962">
-              <folding />
+            <state line="64" column="41" selection-start="1836" selection-end="1861" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -178,7 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/natpryce/piazza/PiazzaLinkPageExtension.java" />
         <option value="$PROJECT_DIR$/src/com/natpryce/cradiator/Piazza.java" />
         <option value="$PROJECT_DIR$/src/com/natpryce/cradiator/Cradiator.java" />
         <option value="$PROJECT_DIR$/src/com/cradiator/cradiator/Cradiator.java" />
@@ -186,14 +184,15 @@
         <option value="$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/BuildTypeMonitorViewState.java" />
         <option value="$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/ProjectMonitorViewState.java" />
         <option value="$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/Cradiator.java" />
-        <option value="$PROJECT_DIR$/build.xml" />
-        <option value="$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/BuildMonitorController.java" />
-        <option value="$PROJECT_DIR$/META-INF/build-server-plugin.xml" />
-        <option value="$PROJECT_DIR$/buildServerResources/project-status.jsp" />
         <option value="$PROJECT_DIR$/cradiator.iws" />
         <option value="$PROJECT_DIR$/cradiator.ipr" />
         <option value="$PROJECT_DIR$/Cradiator.iml" />
         <option value="$PROJECT_DIR$/team-piazza.iws" />
+        <option value="$PROJECT_DIR$/INSTALL" />
+        <option value="$PROJECT_DIR$/build.xml" />
+        <option value="$PROJECT_DIR$/META-INF/build-server-plugin.xml" />
+        <option value="$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/BuildMonitorController.java" />
+        <option value="$PROJECT_DIR$/buildServerResources/project-status.jsp" />
       </list>
     </option>
   </component>
@@ -232,23 +231,18 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="team-piazza" />
+              <option name="myItemId" value="cradiator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="team-piazza" />
+              <option name="myItemId" value="cradiator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -258,7 +252,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="team-piazza" />
+              <option name="myItemId" value="cradiator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -276,7 +270,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="team-piazza" />
+              <option name="myItemId" value="cradiator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -290,7 +284,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="team-piazza" />
+              <option name="myItemId" value="cradiator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -302,28 +296,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="team-piazza" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cradiator-TC-Status" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
@@ -334,8 +315,8 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -534,9 +515,29 @@
       <updated>1259292921571</updated>
     </task>
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1216" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -546,17 +547,17 @@
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32799247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32799247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987747" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1960243" sideWeight="0.332705" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965213" sideWeight="0.66541" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1960243" sideWeight="0.6503299" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1960243" sideWeight="0.66069746" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958587" sideWeight="0.66541" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -617,119 +618,111 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.6.0_16/src.zip!/java/util/Set.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="272" column="12" selection-start="12388" selection-end="12388" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/ProjectMonitorViewState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="32" selection-start="551" selection-end="551" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="16" selection-start="1515" selection-end="1541" vertical-scroll-proportion="-11.36">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/Cradiator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="35" selection-start="2977" selection-end="2977" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/BuildStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="12" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../TeamCity/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar!/org/springframework/web/servlet/mvc/AbstractController.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="68" selection-start="910" selection-end="910" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../TeamCity/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar!/org/springframework/web/servlet/mvc/SimpleControllerHandlerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="56" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/build-server-plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="51" selection-start="143" selection-end="143" vertical-scroll-proportion="-2.2105262">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../TeamCity/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar!/org/springframework/web/servlet/FrameworkServlet.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="28" selection-start="5026" selection-end="5026" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../TeamCity/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar!/org/springframework/web/servlet/DispatcherServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="19" selection-start="6505" selection-end="6505" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/BuildMonitorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1762" selection-end="1762" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="77" column="28" selection-start="5026" selection-end="5026" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/../TeamCity/devPackage/src/openApi-source.jar!/jetbrains/buildServer/controllers/BaseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="2295" selection-end="2295" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="60" column="0" selection-start="2295" selection-end="2295" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/buildServerResources/project-status.jsp">
+    <entry file="jar://$PROJECT_DIR$/../TeamCity/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar!/org/springframework/web/servlet/mvc/AbstractController.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="543" selection-end="543" vertical-scroll-proportion="-7.56">
-          <folding />
-        </state>
+        <state line="16" column="68" selection-start="910" selection-end="910" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../TeamCity/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar!/org/springframework/web/servlet/mvc/SimpleControllerHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="56" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../TeamCity/webapps/ROOT/WEB-INF/lib/spring-webmvc.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="19" selection-start="6505" selection-end="6505" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cradiator.ipr">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="186" selection-start="2563" selection-end="2563" vertical-scroll-proportion="-4.2">
+        <state line="47" column="186" selection-start="2563" selection-end="2563" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Cradiator.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="73" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0">
+        <state line="9" column="73" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="36" selection-start="205" selection-end="205" vertical-scroll-proportion="-2.52">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/team-piazza.iws">
+    <entry file="file://$PROJECT_DIR$/INSTALL">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="45" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.431962">
+        <state line="15" column="65" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COPYING">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/META-INF/build-server-plugin.xml">
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="270" selection-end="270" vertical-scroll-proportion="-6.631579">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/Cradiator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="13" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/BuildMonitorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="75" selection-start="2461" selection-end="2461" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/BuildTypeMonitorViewState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="13" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cradiator/TeamCityStatusPlugin/ProjectMonitorViewState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="41" selection-start="1836" selection-end="1861" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buildServerResources/project-status.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.45742574">
           <folding />
         </state>
       </provider>

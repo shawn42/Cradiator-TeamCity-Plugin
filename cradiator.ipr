@@ -70,6 +70,19 @@
         <inspection_tool class="EqualsWhichDoesntCheckParameterClass" enabled="false" level="WARNING" enabled_by_default="false" />
         <inspection_tool class="GWTRemoteServiceAsyncCheck" enabled="false" level="ERROR" enabled_by_default="false" />
         <inspection_tool class="GWTStyleCheck" enabled="false" level="ERROR" enabled_by_default="false" />
+        <inspection_tool class="HtmlUnknownTag" enabled="false" level="WARNING" enabled_by_default="false">
+          <option name="myValues">
+            <value>
+              <list size="4">
+                <item index="0" class="java.lang.String" itemvalue="nobr" />
+                <item index="1" class="java.lang.String" itemvalue="noembed" />
+                <item index="2" class="java.lang.String" itemvalue="comment" />
+                <item index="3" class="java.lang.String" itemvalue="noscript" />
+              </list>
+            </value>
+          </option>
+          <option name="myCustomValuesEnabled" value="true" />
+        </inspection_tool>
         <inspection_tool class="JavaDoc" enabled="false" level="WARNING" enabled_by_default="false">
           <option name="TOP_LEVEL_CLASS_OPTIONS">
             <value>
@@ -113,6 +126,7 @@
         <inspection_tool class="ObjectEqualsNull" enabled="false" level="WARNING" enabled_by_default="false" />
         <inspection_tool class="ThrowableInstanceNeverThrown" enabled="false" level="WARNING" enabled_by_default="false" />
         <inspection_tool class="UNCHECKED_WARNING" enabled="false" level="WARNING" enabled_by_default="false" />
+        <inspection_tool class="XmlUnboundNsPrefix" enabled="false" level="WARNING" enabled_by_default="false" />
       </profile>
     </profiles>
     <option name="PROJECT_PROFILE" value="Project Default" />
