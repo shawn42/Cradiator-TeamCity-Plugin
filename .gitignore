@@ -1,0 +1,17 @@
+*.bak
+*.cache
+*.log
+*.obj
+*.suo
+*.swp
+*.user
+*ReSharper*
+*resharper*
+*.eprj
+*.idea
+_compareTemp
+_notes
+Thumbs.db
+*.idea*
+*.eprj*
+build/
