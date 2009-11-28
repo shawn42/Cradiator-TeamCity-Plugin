@@ -10,7 +10,7 @@
     <property name="teamcity.runAll" location="${teamcity.home}/bin/runAll.bat"/>
 
 	<path id="build.classpath">
-		<fileset dir="lib" includes="*.jar"/>
+		<!--<fileset dir="lib" includes="*.jar"/>-->
         <fileset dir="${teamcity.home}/lib" includes="*.jar" excludes="${app}*.jar"/>
 		<fileset dir="${teamcity.appdir}/lib" includes="*.jar" excludes="${app}*.jar"/>
 	</path>
@@ -60,13 +60,12 @@
 		<mkdir dir="${distdir}"/>
 	</target>
 
-	<target name="jars"
-		    depends="jar.app, jar.tests"/>
+	<!--<target name="jars" depends="jar.app, jar.tests"/>-->
+    <target name="jars" depends="jar.app"/>
 
 	<target name="jar.app" depends="compile, build.identifier, dir.dist">
 		<jar destfile="${distdir}/${app}.jar" compress="false">
 			<fileset dir="build/classes">
-				<exclude name="nat/piazza/tests/**"/>
 			</fileset>
 			<fileset dir=".">
 				<include name="META-INF/**/*"/>
@@ -79,18 +78,18 @@
 		<echo file="build/classes/version.properties" message="cradiator.version=${version}"/>
 	</target>
 
-	<target name="jar.tests" depends="compile, dir.dist">
+	<!--<target name="jar.tests" depends="compile, dir.dist">
 		<jar destfile="${distdir}/${app}-tests.jar" compress="false">
 			<fileset dir="build/classes">
 				<include name="nat/piazza/tests/**"/>
 			</fileset>
 		</jar>
-	</target>
+	</target>-->
 
 	<target name="run.tests" depends="jars">
-		<property name="outdir" value="build/reports/tests"/>
+		<!--<property name="outdir" value="build/reports/tests"/>
 		<mkdir dir="${outdir}"/>
-		<!--<junit fork="yes" forkmode="once" printsummary="no" showoutput="yes">
+		<junit fork="yes" forkmode="once" printsummary="no" showoutput="yes">
 			<classpath>
 				<path refid="build.classpath"/>
 				<fileset dir="${distdir}" includes="*.jar"/>
