@@ -35,7 +35,7 @@ public class BuildTypeMonitorViewState {
 	private final List<String> commitMessages;
 	private Build lastFinishedBuild;
     private final Build latestBuild;
-    private final Set<String> committers;
+    private final List<String> committers;
 
     public BuildTypeMonitorViewState(SBuildType buildType) {
 		this.buildType = buildType;
@@ -46,16 +46,18 @@ public class BuildTypeMonitorViewState {
         committers = committersForBuild(latestBuild);
 	}
 
-    private Set<String> committersForBuild(Build latestBuild) {
+    private List<String> committersForBuild(Build latestBuild) {
 		List<? extends VcsModification> changesSinceLastSuccessfulBuild = changesInBuild(latestBuild);
 
-		HashSet<String> committers = new HashSet<String>();
+		List<String> committers = new ArrayList<String>();
 		for (VcsModification vcsModification : changesSinceLastSuccessfulBuild) {
             String userName = vcsModification.getUserName();
-            if (userName != null) {
-			    committers.add(userName.trim());
-            }
+            Date commitDate = vcsModification.getVcsDate();
+            if (userName != null)
+            	if (committers.indexOf(userName.trim()) == -1)
+            		committers.add(userName.trim());            
 		}
+		Collections.reverse(committers);
 		return committers;
 	}
 
@@ -183,11 +185,13 @@ public class BuildTypeMonitorViewState {
 		return commitMessages;
 	}
 
-	public Set<String> getCommitters() {
+	public List<String> getCommitters() {
 		return committers;
 	}
-
-    public String getCommittersString() {
-        return committersForBuild(latestBuild).toString();
+  
+    public String getCommittersString() { 
+    	String committers = committersForBuild(latestBuild).toString(); 
+    	committers = committers.replaceAll("[\\[\\]]", "");    	
+        return committers; 
     }
 }
