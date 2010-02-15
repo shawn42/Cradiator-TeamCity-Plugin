@@ -30,28 +30,15 @@ import java.util.Set;
 
 import static com.cradiator.TeamCityStatusPlugin.BuildStatus.SUCCESS;
 
-public class ProjectMonitorViewState {
-    private final SProject project;
-    private final Set<String> committers = new HashSet<String>();
-    private final List<BuildTypeMonitorViewState> builds;
+public class ProjectsMonitorViewState {
+    private final List<ProjectMonitorViewState> projects;
 
-    public ProjectMonitorViewState(SProject project) {
-        this.project = project;
+    public ProjectsMonitorViewState(List<SProject> allProjects) {
+        projects = new ArrayList<ProjectMonitorViewState>();
 
-        builds = new ArrayList<BuildTypeMonitorViewState>();
-        for (SBuildType buildType : project.getBuildTypes()) {
-//            if (buildType.isAllowExternalStatus()) {
-                builds.add(new BuildTypeMonitorViewState(buildType));
-//            }
+        for (SProject proj : allProjects) {
+            projects.add(new ProjectMonitorViewState(proj));
         }
-
-        for (BuildTypeMonitorViewState build : builds) {
-            committers.addAll(build.getCommitters());
-        }
-    }
-
-    public String getProjectName() {
-        return project.getName();
     }
 
     public String getCombinedStatusClasses() {
@@ -63,30 +50,27 @@ public class ProjectMonitorViewState {
     }
 
     public BuildStatus status() {
-        if (builds.isEmpty()) {
+        if (projects.isEmpty()) {
             return BuildStatus.UNKNOWN;
         }
         else {
             BuildStatus status = SUCCESS;
-            for (BuildTypeMonitorViewState build : builds) {
-                status = status.mostSevere(build.status());
+            for (ProjectMonitorViewState proj : projects) {
+                status = status.mostSevere(proj.status());
             }
             return status;
         }
     }
 
     public boolean isBuilding() {
-        for (BuildTypeMonitorViewState build : builds) {
-            if (build.isBuilding()) return true;
+        for (ProjectMonitorViewState proj : projects) {
+            if (proj.isBuilding()) return true;
         }
         return false;
     }
 
-    public List<BuildTypeMonitorViewState> getBuilds() {
-        return builds;
+    public List<ProjectMonitorViewState> getProjects() {
+        return projects;
     }
     
-    public Set<String> getCommitters() {
-        return committers;
-    }
 }

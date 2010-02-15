@@ -5,9 +5,9 @@
 	</tstamp>
 
 	<property name="distdir" value="build/${app}-dist"/>
-	<property name="teamcity.home" location="c:/Code/TeamCity"/>
+  <property name="teamcity.home" location="/Users/shawn42/lib/TeamCity"/>
 	<property name="teamcity.appdir" location="${teamcity.home}/webapps/ROOT/WEB-INF"/>
-    <property name="teamcity.runAll" location="${teamcity.home}/bin/runAll.bat"/>
+    <property name="teamcity.runAll" location="${teamcity.home}/bin/runAll.sh"/>
 
 	<path id="build.classpath">
 		<!--<fileset dir="lib" includes="*.jar"/>-->

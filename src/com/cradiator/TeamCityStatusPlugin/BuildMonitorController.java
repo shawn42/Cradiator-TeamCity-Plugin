@@ -29,6 +29,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 
 public class BuildMonitorController extends BaseController {
@@ -48,8 +49,9 @@ public class BuildMonitorController extends BaseController {
         if (requestHasParameter(request, PROJECT_ID)) {
             return showProject(request.getParameter(PROJECT_ID), response);
         } else {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "no project id specified");
-            return null;
+            return showAllProjects(response);
+//            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "no project id specified");
+//            return null;
         }
     }
 
@@ -61,6 +63,16 @@ public class BuildMonitorController extends BaseController {
         }
         return modelWithView("project-status.jsp")
                 .addObject("project", new ProjectMonitorViewState(project));
+    }
+
+    private ModelAndView showAllProjects(HttpServletResponse response) throws IOException {
+        List<SProject> projects = projectManager.getProjects();
+        if (projects == null || projects.isEmpty()) {
+            response.sendError(HttpServletResponse.SC_NOT_FOUND, "no active projects found");
+            return null;
+        }
+        return modelWithView("projects-status.jsp")
+                .addObject("projects", new ProjectsMonitorViewState(projects));
     }
 
     private ModelAndView modelWithView(String viewJSP) {

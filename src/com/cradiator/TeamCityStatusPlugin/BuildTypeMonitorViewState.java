@@ -30,168 +30,174 @@ import java.util.*;
 
 
 public class BuildTypeMonitorViewState {
-	private final SBuildType buildType;
+  private final SBuildType buildType;
 
-	private final List<String> commitMessages;
-	private Build lastFinishedBuild;
-    private final Build latestBuild;
-    private final List<String> committers;
+  private final Set<String> commitMessages;
+  private Build lastFinishedBuild;
+  private final Build latestBuild;
+  private final Set<String> committers;
 
-    public BuildTypeMonitorViewState(SBuildType buildType) {
-		this.buildType = buildType;
-        this.lastFinishedBuild = buildType.getLastChangesFinished();
-		this.latestBuild = buildType.getLastChangesStartedBuild();
-		this.commitMessages = commitMessagesForBuild(latestBuild);
-
-        committers = committersForBuild(latestBuild);
-	}
-
-    private List<String> committersForBuild(Build latestBuild) {
-		List<? extends VcsModification> changesSinceLastSuccessfulBuild = changesInBuild(latestBuild);
-
-		List<String> committers = new ArrayList<String>();
-		for (VcsModification vcsModification : changesSinceLastSuccessfulBuild) {
-            String userName = vcsModification.getUserName();
-            Date commitDate = vcsModification.getVcsDate();
-            if (userName != null)
-            	if (committers.indexOf(userName.trim()) == -1)
-            		committers.add(userName.trim());            
-		}
-		Collections.reverse(committers);
-		return committers;
-	}
-
-	private ArrayList<String> commitMessagesForBuild(Build latestBuild) {
-		List<? extends VcsModification> changesSinceLastSuccessfulBuild = changesInBuild(latestBuild);
-
-		ArrayList<String> commitMessages = new ArrayList<String>();
-		for (VcsModification vcsModification : changesSinceLastSuccessfulBuild) {
-			commitMessages.add(vcsModification.getDescription().trim());
-		}
-
-		return commitMessages;
-	}
-
-	@SuppressWarnings("unchecked")
-	private List<? extends VcsModification> changesInBuild(Build latestBuild) {
-		return latestBuild.getChanges(SelectPrevBuildPolicy.SINCE_LAST_SUCCESSFULLY_FINISHED_BUILD, true);
-	}
-
-	public String getFullName() {
-		return buildType.getFullName();
-	}
-
-    public String getName() {
-        return buildType.getName();
+  public BuildTypeMonitorViewState(SBuildType buildType) {
+    this.buildType = buildType;
+    this.lastFinishedBuild = buildType.getLastChangesFinished();
+    this.latestBuild = buildType.getLastChangesStartedBuild();
+    if(latestBuild != null) {
+      this.commitMessages = commitMessagesForBuild(latestBuild);
+      committers = committersForBuild(latestBuild);
+    } else {
+      this.commitMessages = new HashSet<String>();
+      committers = new HashSet<String>();
     }
 
-	public String getBuildNumber() {
-		return latestBuild.getBuildNumber();
-	}
+  }
 
-	public String getCombinedStatusClasses() {
-        return status().toStringReflectingCurrentlyBuilding(isBuilding());
-	}
+  private Set<String> committersForBuild(Build latestBuild) {
+    List<? extends VcsModification> changesSinceLastSuccessfulBuild = changesInBuild(latestBuild);
 
-	public boolean isBuilding() {
-		return !latestBuild.isFinished();
-	}
+    Set<String> committers = new TreeSet<String>();
+    for (VcsModification vcsModification : changesSinceLastSuccessfulBuild) {
+      String userName = vcsModification.getUserName();
+      Date commitDate = vcsModification.getVcsDate();
+      if (userName != null) {
+        if (!committers.contains(userName.trim())) {
+          committers.add(userName.trim());            
+        }
+      }
+    }
+    return ((TreeSet)committers).descendingSet();
+  }
 
-    public String getActivityMessage() {
-		return this.isBuilding() ? "Building" : "Sleeping";
-	}
+  private Set<String> commitMessagesForBuild(Build latestBuild) {
+    List<? extends VcsModification> changesSinceLastSuccessfulBuild = changesInBuild(latestBuild);
 
-    public boolean isFailing() {
-        return this.status() == BuildStatus.FAILURE;
+    Set<String> commitMessages = new TreeSet<String>();
+    for (VcsModification vcsModification : changesSinceLastSuccessfulBuild) {
+      commitMessages.add(vcsModification.getDescription().trim());
     }
 
-	public Build getLatestBuild() {
-		return latestBuild;
-	}
+    return commitMessages;
+  }
 
-    public Build getLastFinishedBuild() {
-        return lastFinishedBuild;
+  @SuppressWarnings("unchecked")
+    private List<? extends VcsModification> changesInBuild(Build latestBuild) {
+      return latestBuild.getChanges(SelectPrevBuildPolicy.SINCE_LAST_SUCCESSFULLY_FINISHED_BUILD, true);
     }
 
-	public String getActivity() {
-		if (isBuilding()) {
-			return ((SRunningBuild)latestBuild).getShortStatistics().getCurrentStage().replace('"','\'');
-		}
-		else {
-			return status().toString().replace('"','\'');
-		}
-	}
+  public String getFullName() {
+    return buildType.getFullName();
+  }
 
-	public int getCompletedPercent() {
-		if (isBuilding()) {
-			return ((SRunningBuild)latestBuild).getCompletedPercent();
-		}
-		else {
-			return 100;
-		}
-	}
+  public String getName() {
+    return buildType.getName();
+  }
 
-	public long getDurationSeconds() {
-		Date start = latestBuild.getStartDate();
-		Date finished = latestBuild.getFinishDate();
-		Date end = (finished != null) ? finished : now();
+  public String getBuildNumber() {
+    return latestBuild.getBuildNumber();
+  }
 
-		return (end.getTime() - start.getTime())/1000L;
-	}
+  public String getCombinedStatusClasses() {
+    return status().toStringReflectingCurrentlyBuilding(isBuilding());
+  }
 
-	private Date now() {
-		return new Date();
-	}
+  public boolean isBuilding() {
+    return !latestBuild.isFinished();
+  }
 
-    public String getStatus() {
-        return status().toString();
+  public String getActivityMessage() {
+    return this.isBuilding() ? "Building" : "Sleeping";
+  }
+
+  public boolean isFailing() {
+    return this.status() == BuildStatus.FAILURE;
+  }
+
+  public Build getLatestBuild() {
+    return latestBuild;
+  }
+
+  public Build getLastFinishedBuild() {
+    return lastFinishedBuild;
+  }
+
+  public String getActivity() {
+    if (isBuilding()) {
+      return ((SRunningBuild)latestBuild).getShortStatistics().getCurrentStage().replace('"','\'');
     }
-
-	public BuildStatus status() {
-		if (latestBuild == null) {
-			return BuildStatus.UNKNOWN;
-		}
-		else if (latestBuild.getBuildStatus().isFailed()) {
-			return BuildStatus.FAILURE;
-		}
-		if (lastFinishedBuild == null) {
-			return BuildStatus.UNKNOWN;
-		}
-		else if (lastFinishedBuild.getBuildStatus().isFailed()) {
-			return BuildStatus.FAILURE;
-		}
-		else {
-			return BuildStatus.SUCCESS;
-		}
-	}
-
-    public String getRunningBuildStatus() {
-        return runningBuildStatus().toString();
+    else {
+      return status().toString().replace('"','\'');
     }
+  }
 
-	public BuildStatus runningBuildStatus() {
-		if (latestBuild == null) {
-			return BuildStatus.UNKNOWN;
-		}
-		else if (latestBuild.getBuildStatus().isFailed()) {
-			return BuildStatus.FAILURE;
-		}
-		else {
-			return BuildStatus.SUCCESS;
-		}
-	}
-
-	public List<String> getCommitMessages() {
-		return commitMessages;
-	}
-
-	public List<String> getCommitters() {
-		return committers;
-	}
-  
-    public String getCommittersString() { 
-    	String committers = committersForBuild(latestBuild).toString(); 
-    	committers = committers.replaceAll("[\\[\\]]", "");    	
-        return committers; 
+  public int getCompletedPercent() {
+    if (isBuilding()) {
+      return ((SRunningBuild)latestBuild).getCompletedPercent();
     }
+    else {
+      return 100;
+    }
+  }
+
+  public long getDurationSeconds() {
+    Date start = latestBuild.getStartDate();
+    Date finished = latestBuild.getFinishDate();
+    Date end = (finished != null) ? finished : now();
+
+    return (end.getTime() - start.getTime())/1000L;
+  }
+
+  private Date now() {
+    return new Date();
+  }
+
+  public String getStatus() {
+    return status().toString();
+  }
+
+  public BuildStatus status() {
+    if (latestBuild == null) {
+      return BuildStatus.UNKNOWN;
+    }
+    else if (latestBuild.getBuildStatus().isFailed()) {
+      return BuildStatus.FAILURE;
+    }
+    if (lastFinishedBuild == null) {
+      return BuildStatus.UNKNOWN;
+    }
+    else if (lastFinishedBuild.getBuildStatus().isFailed()) {
+      return BuildStatus.FAILURE;
+    }
+    else {
+      return BuildStatus.SUCCESS;
+    }
+  }
+
+  public String getRunningBuildStatus() {
+    return runningBuildStatus().toString();
+  }
+
+  public BuildStatus runningBuildStatus() {
+    if (latestBuild == null) {
+      return BuildStatus.UNKNOWN;
+    }
+    else if (latestBuild.getBuildStatus().isFailed()) {
+      return BuildStatus.FAILURE;
+    }
+    else {
+      return BuildStatus.SUCCESS;
+    }
+  }
+
+  public Set<String> getCommitMessages() {
+    return commitMessages;
+  }
+
+  public Set<String> getCommitters() {
+    return committers;
+  }
+
+  public String getCommittersString() { 
+    String committers = committersForBuild(latestBuild).toString(); 
+    committers = committers.replaceAll("[\\[\\]]", "");    	
+    return committers; 
+  }
 }
