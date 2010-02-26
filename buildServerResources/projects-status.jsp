@@ -20,6 +20,7 @@
                 <messages>
                     <c:if test="${build.failing}">
                         <message text="${build.committersString}" kind="Breakers"/>
+                        <message text="${build.responsibleUser}" kind="Breakers"/>
                     </c:if>
                 </messages>
             </Project>

@@ -36,6 +36,7 @@ public class BuildTypeMonitorViewState {
   private Build lastFinishedBuild;
   private final Build latestBuild;
   private final Set<String> committers;
+  private final String responsibleUser;
 
   public BuildTypeMonitorViewState(SBuildType buildType) {
     this.buildType = buildType;
@@ -44,9 +45,15 @@ public class BuildTypeMonitorViewState {
     if(latestBuild != null) {
       this.commitMessages = commitMessagesForBuild(latestBuild);
       committers = committersForBuild(latestBuild);
+      if(buildType.getResponsibilityInfo().getUser() != null) {
+        responsibleUser = buildType.getResponsibilityInfo().getUser().getName();
+      } else {
+        responsibleUser = "";
+      }
     } else {
       this.commitMessages = new HashSet<String>();
       committers = new HashSet<String>();
+      responsibleUser = "";
     }
 
   }
@@ -193,6 +200,10 @@ public class BuildTypeMonitorViewState {
 
   public Set<String> getCommitters() {
     return committers;
+  }
+
+  public String getResponsibleUser() {
+    return responsibleUser;
   }
 
   public String getCommittersString() { 
