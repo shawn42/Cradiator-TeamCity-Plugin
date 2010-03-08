@@ -7,23 +7,25 @@
         name="${project.projectName}">
        
         <c:forEach var="build" items="${project.builds}">
-            <Project name="${build.name}"
-                     category=""
-                     activity="${build.activityMessage}"
-                     lastBuildStatus="${build.lastFinishedBuild.buildStatus}"
-                     lastBuildLabel="${build.lastFinishedBuild.buildNumber}"
-                     lastBuildTime="${build.lastFinishedBuild.finishDate}"
-                     webUrl=""
-                     CurrentMessage=""
-                     BuildStage=""
-                     BuiltPercent="${build.completedPercent}">
-                <messages>
-                    <c:if test="${build.failing}">
-                        <message text="${build.committersString}" kind="Breakers"/>
-                        <message text="${build.responsibleUser}" kind="Breakers"/>
-                    </c:if>
-                </messages>
-            </Project>
+          <c:if test="${build.latestBuild == null}">
+              <Project name="${build.name}"
+                       category=""
+                       activity="${build.activityMessage}"
+                       lastBuildStatus="${build.lastFinishedBuild.buildStatus}"
+                       lastBuildLabel="${build.lastFinishedBuild.buildNumber}"
+                       lastBuildTime="${build.lastFinishedBuild.finishDate}"
+                       webUrl=""
+                       CurrentMessage=""
+                       BuildStage=""
+                       BuiltPercent="${build.completedPercent}">
+                  <messages>
+                      <c:if test="${build.failing}">
+                          <message text="${build.committersString}" kind="Breakers"/>
+                          <message text="${build.responsibleUser}" kind="Breakers"/>
+                      </c:if>
+                  </messages>
+              </Project>
+            </c:if>
         </c:forEach>
     </Group>
 </c:forEach>
