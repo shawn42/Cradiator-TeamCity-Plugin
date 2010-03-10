@@ -7,7 +7,7 @@
         name="${project.projectName}">
        
         <c:forEach var="build" items="${project.builds}">
-          <c:if test="${build.latestBuild == null}">
+          <c:if test="${build.latestBuild != null}">
               <Project name="${build.name}"
                        category=""
                        activity="${build.activityMessage}"

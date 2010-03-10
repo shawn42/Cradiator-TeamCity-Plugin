@@ -3,7 +3,7 @@
 <jsp:useBean id="project" type="com.cradiator.TeamCityStatusPlugin.ProjectMonitorViewState" scope="request"/>
 <Projects CCType="TeamCity">
     <c:forEach var="build" items="${project.builds}">
-        <c:if test="${build.latestBuild == null}">
+        <c:if test="${build.latestBuild != null}">
           <Project name="${build.name}"
                    category=""
                    activity="${build.activityMessage}"
